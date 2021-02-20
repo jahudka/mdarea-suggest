@@ -47,13 +47,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Create release archive
-        run: zip -r mdarea dist
+        run: zip -r mdarea-suggest dist
       - name: Upload release archive
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./mdarea.zip
-          asset_name: mdarea.zip
+          asset_path: ./mdarea-suggest.zip
+          asset_name: mdarea-suggest.zip
           asset_content_type: application/zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
