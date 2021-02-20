@@ -6,7 +6,7 @@
     "type": "vcs",
     "url": "https://github.com/jahudka/mdarea-suggest"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/mdarea-suggest.min.js",
   "types": "dist/mdarea-suggest.d.ts",
   "dependencies": {
