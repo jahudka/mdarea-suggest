@@ -35,14 +35,14 @@ Register the extension during MarkdownArea initialisation:
 
 <script type="application/javascript">
   const loadHashtags = async (prefix, signal) => {
-  	const response = await fetch('/hashtags?prefix=' + encodeURIComponent(prefix), { signal });
-  	return response.json();
+    const response = await fetch('/hashtags?prefix=' + encodeURIComponent(prefix), { signal });
+    return response.json();
   };
 
   var editor = new MarkdownArea(document.getElementById('mdarea'), {
-  	extensions: [
-  		new MarkdownAreaSuggest(loadHashtags, {
-  			pattern: /#[a-z0-9._]*/i
+    extensions: [
+      new MarkdownAreaSuggest(loadHashtags, {
+        pattern: /#[a-z0-9._]*/i
       }),
     ],
   });
@@ -101,6 +101,8 @@ by the editor.
      Note that unlike `mdarea` the autosuggest extension doesn't support
      key combinations, only single keys. The default mapping is as follows:
 
+     | Action   | Keys                                            |
+     | -------- | ----------------------------------------------- |
      | `prev`   | `ArrowUp`, `Up`                                 |
      | `next`   | `ArrowDown`, `Down`                             |
      | `accept` | `ArrowRight`, `Right`, `Enter`, `Tab`, `Accept` |
