@@ -1,0 +1,40 @@
+{
+  "name": "mdarea-suggest",
+  "author": "jahudka <me@subsonic.cz>",
+  "license": "MIT",
+  "repository": {
+    "type": "vcs",
+    "url": "https://github.com/jahudka/mdarea-suggest"
+  },
+  "version": "0.0.0",
+  "main": "dist/mdarea-suggest.min.js",
+  "types": "dist/mdarea-suggest.d.ts",
+  "dependencies": {
+    "mdarea": "^2.0.12"
+  },
+  "devDependencies": {
+    "@rollup/plugin-replace": "^2.3.4",
+    "@rollup/plugin-typescript": "^8.1.0",
+    "@types/node": "^14.14.22",
+    "dts-bundle-generator": "^5.6.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.38.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.1.0",
+    "typescript": "^4.1.3"
+  },
+  "files": [
+    "dist/*",
+    "package.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build:cleanup": "rimraf dist",
+    "build:compile:rollup": "rollup -c",
+    "build:compile:types": "dts-bundle-generator --config dtsconfig.json",
+    "build:compile": "run-p build:compile:rollup build:compile:types",
+    "build": "run-s build:cleanup build:compile",
+    "start": "rollup -c --watch"
+  }
+}
